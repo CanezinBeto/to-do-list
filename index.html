@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-do List</title>
+
+  <link rel="stylesheet" href="/style/style.css">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=MuseoModerno:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <header class="header-bg">
+      <div class="header-title">
+        <h1>To-do List<span>.</span></h1>
+      </div>
+    </header>
+
+    <div class="list">
+      <form class="form" action="#">
+        <label for="text">Digite sua tarefa.</label>
+        <input data-js="input" type="text" name="text" id="text">
+        <button data-js="add" class="btn">add</button>
+      </form>
+
+      <main class="list-content">
+        <ul data-js="ul" class="list-ul">
+          <!-- <li><span class="list-span">Conteudo</span><img src="./img/delete.svg" alt="delete"></li> -->
+      </main>
+
+      <div class="botoes">
+        <button data-js="salvar" class="salvar">Salvar Lista</button>
+        <button data-js="remover" class="remover">Remover Tudo <img src="./img/delete_all.svg" alt="Deletar tudo"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Script -->
+  <script type="application/javascript" src="/javascript/main.js"></script>
+</body>
+
+</html>
