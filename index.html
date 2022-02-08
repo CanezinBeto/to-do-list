@@ -16,31 +16,46 @@
 </head>
 
 <body>
-  <div class="container">
-    <header class="header-bg">
-      <div class="header-title">
-        <h1>To-do List<span>.</span></h1>
-      </div>
-    </header>
 
-    <div class="list">
-      <form class="form" action="#">
-        <label for="text">Digite sua tarefa.</label>
-        <input data-js="input" type="text" name="text" id="text">
-        <button data-js="add" class="btn">add</button>
-      </form>
+  <header class="header-bg">
+    <div class="header-title">
+      <h1>To-do List<span>.</span></h1>
+    </div>
+  </header>
 
-      <main data-js="main">
-        <ul data-js="ul" class="list-ul">
-        </ul>
-      </main>
+  <div class="list">
+    <form class="form" action="#">
+      <label for="text">Digite sua tarefa.</label>
+      <input data-js="input" type="text" name="text" id="text">
+      <button data-js="add" class="btn">add</button>
+    </form>
 
-      <div class="botoes">
-        <button data-js="salvar" class="salvar">Salvar Lista</button>
-        <button data-js="remover" class="remover">Remover Tudo <img src="./img/delete_all.svg" alt="Deletar tudo"></button>
-      </div>
+    <main data-js="main">
+      <ul data-js="ul" class="list-ul">
+      </ul>
+    </main>
+
+    <div class="botoes">
+      <button data-js="salvar" class="salvar">Salvar Lista</button>
+      <button data-js="remover" class="remover">Remover Tudo <img src="./img/delete_all.svg" alt="Deletar tudo"></button>
     </div>
   </div>
+
+  <footer class="footer">
+    <p>Desenvolvido por <span class="dev">Alberto Canezin.</span></p>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/albertocanezin-dev/">
+        <img src="./img/linkedin.svg" alt="Linkedin do Desenvolvedor">
+      </a>
+      <a href="https://github.com/CanezinBeto">
+        <img src="./img/github.svg" alt="Github do Desenvolvedor">
+      </a>
+      <a href="https://canezinbeto.github.io/">
+        <img src="./img/web.svg" alt="Web site do Desenvolvedor">
+      </a>
+    </div>
+  </footer>
+
 
   <!-- Main Script -->
   <script src="./javascript/main.js"></script>
