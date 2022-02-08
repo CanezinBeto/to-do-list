@@ -64,7 +64,10 @@ const saveUl = () => {
   const ulElement = ulParse.parseFromString(localStorage['ul'], 'text/html')
   const liElements = ulElement.querySelectorAll('li')
 
-  if (liElements.length > 0) contador = liElements.length
+  if (liElements.length > 0) {
+    contador = liElements.length
+    main.classList.add('list-content')
+  }
   liElements.forEach((item) => {
     ul.appendChild(item)
   })
