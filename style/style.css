@@ -1,3 +1,7 @@
+html,
+body {
+  height: 100%;
+}
 h1,
 p,
 ul,
@@ -16,6 +20,12 @@ ul {
 
 body {
   background: #f5f9ff;
+  display: flex;
+  flex-direction: column;
+}
+
+.flex1 {
+  flex: 1 0 auto;
 }
 
 img {
@@ -150,8 +160,7 @@ img {
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
+  flex-shrink: 0;
   background: #292929;
   width: 100%;
   display: flex;
@@ -205,7 +214,7 @@ img {
     flex-direction: column;
     gap: 15px;
     max-width: 60%;
-    margin: 0 auto;
+    margin: 0 auto 30px auto;
   }
 
   .footer {
