@@ -3,6 +3,7 @@ const btnAdd = document.querySelector('[data-js="add"]')
 const ul = document.querySelector('[data-js="ul"]')
 const delet = document.querySelector('[data-js="remover"]')
 const salvar = document.querySelector('[data-js="salvar"]')
+const main = document.querySelector('[data-js="main"]')
 const initialArrayLi = []
 const initialArraySpan = []
 const initialArrayImg = []
@@ -21,6 +22,7 @@ for (let index = 0; initialArrayLi.length < 10; index++) {
   initialArraySpan[index].classList.add('list-span')
   initialArrayImg.push(createElement('img'))
   initialArrayImg[index].setAttribute('src', './img/delete.svg')
+  initialArrayImg[index].setAttribute('data-js', 'delete')
 }
 
 // Função que adiciona o span ao li
@@ -45,16 +47,39 @@ const handleClick = (event) => {
     addSpanInLi()
     addImgInLi()
     contador++
+    input.value = ''
+    main.classList.add('list-content')
   }
 }
 
 // Função para salvar os dados
-const saveItens = (name, valor) => {
-  localStorage[name] = valor
+const saveItens = () => {
+  const ulContent = ul.innerHTML
+  localStorage['ul'] = ulContent
 }
-const salveBody = () => {
-  saveItens('body', document.body.children)
+
+// Função que captura os dados do localStorage e transforma em elementos HTML
+const saveUl = () => {
+  const ulParse = new DOMParser()
+  const ulElement = ulParse.parseFromString(localStorage['ul'], 'text/html')
+  const liElements = ulElement.querySelectorAll('li')
+
+  if (liElements.length > 0) contador = liElements.length
+  liElements.forEach((item) => {
+    ul.appendChild(item)
+  })
+  const delet = document.querySelectorAll('[data-js="delete"]')
+  delet.forEach((item) => {
+    item.addEventListener('click', () => {
+      ul.removeChild(item.parentElement)
+      contador--
+      if (contador < 1) {
+        main.classList.remove('list-content')
+      }
+    })
+  })
 }
+saveUl()
 
 // Função para deletar todos as li's
 const deleteLi = () => {
@@ -62,6 +87,9 @@ const deleteLi = () => {
   li.forEach((item) => {
     ul.removeChild(item)
     contador = 0
+    if (contador < 1) {
+      main.classList.remove('list-content')
+    }
   })
 }
 
@@ -71,7 +99,10 @@ initialArrayImg.forEach((item) => {
   item.addEventListener('click', () => {
     ul.removeChild(item.parentElement)
     contador--
+    if (contador < 1) {
+      main.classList.remove('list-content')
+    }
   })
 })
 delet.addEventListener('click', deleteLi)
-salvar.addEventListener('click', salveBody)
+salvar.addEventListener('click', saveItens)

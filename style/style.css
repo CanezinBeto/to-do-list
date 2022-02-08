@@ -20,13 +20,13 @@ img {
 
 .header-bg {
   background: #292929;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .header-title h1 {
   font-family: 'MuseoModerno';
-  font-size: 64px;
-  padding: 40px 0;
+  font-size: 52px;
+  padding: 20px 0;
   line-height: 1.14;
   color: #dee5ff;
   text-align: center;
@@ -43,13 +43,13 @@ img {
 }
 
 .form {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .form label {
   display: block;
   font-family: 'Fira Sans';
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 400;
   color: #01071d;
   margin-bottom: 8px;
@@ -59,18 +59,18 @@ img {
   display: inline-block;
   border: 1px solid #becbfa;
   background: #dee5ff;
-  padding: 18px 36px;
+  padding: 10px 20px;
   border-radius: 4px;
   width: 70%;
-  font-size: 18px;
+  font-size: 16px;
   font-family: 'Fira Sans';
   color: #01071d;
 }
 
 .btn {
   display: inline-block;
-  padding: 18px 36px;
-  font-size: 18px;
+  padding: 10px 20px;
+  font-size: 16px;
   font-family: 'Fira Sans';
   text-transform: uppercase;
   color: #01071d;
@@ -85,9 +85,9 @@ img {
 
 .list-content {
   background: #000000;
-  padding: 40px;
+  padding: 20px;
   border-radius: 4px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .list-ul li {
@@ -95,7 +95,7 @@ img {
   background: #dee5ff;
   margin-bottom: 20px;
   border-radius: 4px;
-  padding: 25px 30px;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -106,14 +106,16 @@ img {
 }
 
 .list-ul li span {
-  font-size: 24px;
+  font-size: 18px;
   font-family: 'Fira Sans';
   color: #01071d;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .botoes {
   display: flex;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   gap: 40px;
 }
 
@@ -121,8 +123,8 @@ img {
   background: #becbfa;
   border: 1px solid #9baceb;
   border-radius: 4px;
-  font-size: 24px;
-  padding: 15px 30px;
+  font-size: 16px;
+  padding: 10px 20px;
   color: #01071d;
   font-family: 'Fira Sans';
   cursor: pointer;
@@ -132,12 +134,39 @@ img {
   background: #dee5ff;
   border: 1px solid #becbfa;
   border-radius: 4px;
-  font-size: 24px;
-  padding: 15px 30px;
+  font-size: 16px;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
   gap: 10px;
   cursor: pointer;
   color: #01071d;
   font-family: 'Fira Sans';
+}
+
+@media (max-width: 500px) {
+  .form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .form input {
+    margin-top: 0 auto;
+    align-self: center;
+  }
+
+  .btn {
+    position: initial;
+    width: 80px;
+    margin: 15px auto;
+  }
+
+  .botoes {
+    flex-direction: column;
+    gap: 15px;
+    max-width: 60%;
+    margin: 0 auto;
+  }
 }
