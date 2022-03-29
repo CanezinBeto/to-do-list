@@ -42,6 +42,10 @@ const addImgInLi = () => {
 // Função que atualiza a lista quando o botão add for acionado
 const handleClick = (event) => {
   event.preventDefault()
+  if (input.value === '') {
+    alert('Você precisa preenher o campo de tarefa')
+    return
+  }
   if (contador <= 9) {
     ul.appendChild(initialArrayLi[contador])
     addSpanInLi()
