@@ -1,3 +1,4 @@
+import ToDoList from './script.js'
 const input = document.querySelector('[data-js="input"]')
 const btnAdd = document.querySelector('[data-js="add"]')
 const ul = document.querySelector('[data-js="ul"]')
@@ -113,3 +114,14 @@ initialArrayImg.forEach((item) => {
 })
 delet.addEventListener('click', deleteLi)
 salvar.addEventListener('click', saveItens)
+
+const toDoList = new ToDoList(
+  '[data-js="input"]',
+  '[data-js="add"]',
+  '[data-js="remover"]',
+  '[data-js="salvar"]'
+)
+
+toDoList.init()
+toDoList.createArrayLi()
+console.log(toDoList.arrayLi)
