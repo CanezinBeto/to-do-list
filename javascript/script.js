@@ -5,6 +5,9 @@ export default class ToDoList {
     this.btnDelete = document.querySelector(btnDelete)
     this.btnSave = document.querySelector(btnSave)
     this.contador = 0
+
+    // Bind dos métodos que chão chmados em eventos
+    this.addLiInUL = this.addLiInUL.bind(this)
   }
 
   // Método para criar um elemento HTML
@@ -57,8 +60,37 @@ export default class ToDoList {
     })
   }
 
+  // Evento de adicionar LI
+  addLiInUL(event) {
+    event.preventDefault()
+    const ul = document.querySelector('[data-js="ul"]')
+    const main = document.querySelector('[data-js="main"]')
+
+    if (this.input.value === '') {
+      alert('Você precisa preencher o campo de tarefa')
+      return
+    }
+
+    if (this.contador <= 9) {
+      ul.appendChild(this.arrayLi[this.contador])
+      this.input.value = ''
+      main.classList.add('list-content')
+      this.contador++
+    }
+  }
+
+  // Método para chamar o evento de adicionar LI
+  clickInAdd() {
+    this.btnAdd.addEventListener('click', this.addLiInUL)
+  }
+
   // Método para iniciar o App
   init() {
-    console.log(this.btnAdd, this.btnDelete, this.btnSave, this.input)
+    this.createArrayLi()
+    this.createArrayImg()
+    this.createArraySpan()
+    this.addSpanInLi()
+    this.addImgInLi()
+    this.clickInAdd()
   }
 }

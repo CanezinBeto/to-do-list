@@ -122,12 +122,5 @@ const toDoList = new ToDoList(
   '[data-js="salvar"]'
 )
 
-toDoList.init()
-toDoList.createArrayLi()
-toDoList.createArrayImg()
-toDoList.createArraySpan()
-toDoList.addSpanInLi()
-toDoList.addImgInLi()
-console.log(toDoList.arrayImg)
-console.log(toDoList.arraySpan)
-console.log(toDoList.arrayLi)
+// toDoList.init()
+// console.log(toDoList.arrayLi)
