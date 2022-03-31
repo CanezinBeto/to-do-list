@@ -7,11 +7,13 @@ export default class ToDoList {
     this.contador = 0
   }
 
+  // Método para criar um elemento HTML
   createElement(element) {
     this.element = document.createElement(element)
     return this.element
   }
 
+  // Método para criar um array de elementos LI HTML
   createArrayLi() {
     this.arrayLi = []
 
@@ -21,6 +23,7 @@ export default class ToDoList {
     return this.arrayLi
   }
 
+  // Método para criar um array de elementos IMG HTML
   createArrayImg() {
     this.arrayImg = []
 
@@ -30,6 +33,7 @@ export default class ToDoList {
     return this.arrayImg
   }
 
+  // Método para criar um array de elementos SPAN HTML
   createArraySpan() {
     this.arraySpan = []
 
@@ -39,6 +43,21 @@ export default class ToDoList {
     return this.span
   }
 
+  // Método para incluir os span's ao li
+  addSpanInLi() {
+    this.arrayLi.forEach((item, index) => {
+      item.appendChild(this.arraySpan[index])
+    })
+  }
+
+  // Método para incluir img ao li
+  addImgInLi() {
+    this.arrayLi.forEach((item, index) => {
+      item.appendChild(this.arrayImg[index])
+    })
+  }
+
+  // Método para iniciar o App
   init() {
     console.log(this.btnAdd, this.btnDelete, this.btnSave, this.input)
   }
