@@ -4,7 +4,6 @@ export default class ToDoList {
     this.btnAdd = document.querySelector(btnAdd)
     this.btnDelete = document.querySelector(btnDelete)
     this.btnSave = document.querySelector(btnSave)
-    this.arrayLi = []
     this.contador = 0
   }
 
@@ -14,9 +13,30 @@ export default class ToDoList {
   }
 
   createArrayLi() {
+    this.arrayLi = []
+
     for (let index = 0; this.arrayLi.length < 10; index++) {
       this.arrayLi.push(this.createElement('li'))
     }
+    return this.arrayLi
+  }
+
+  createArrayImg() {
+    this.arrayImg = []
+
+    for (let index = 0; this.arrayImg.length < 10; index++) {
+      this.arrayImg.push(this.createElement('img'))
+    }
+    return this.arrayImg
+  }
+
+  createArraySpan() {
+    this.arraySpan = []
+
+    for (let index = 0; this.arraySpan.length < 10; index++) {
+      this.arraySpan.push(this.createElement('span'))
+    }
+    return this.span
   }
 
   init() {

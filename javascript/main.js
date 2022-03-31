@@ -124,4 +124,8 @@ const toDoList = new ToDoList(
 
 toDoList.init()
 toDoList.createArrayLi()
+toDoList.createArrayImg()
+toDoList.createArraySpan()
 console.log(toDoList.arrayLi)
+console.log(toDoList.arrayImg)
+console.log(toDoList.arraySpan)
