@@ -26,6 +26,7 @@ export default class ToDoList {
 
     for (let index = 0; this.arrayLi.length < 10; index++) {
       this.arrayLi.push(this.createElement('li'))
+      this.arrayLi[index].setAttribute('draggable', 'true')
     }
     this.addSpanInLi()
     this.addImgInLi()
@@ -87,6 +88,7 @@ export default class ToDoList {
       this.ul.appendChild(this.arrayLi[this.contador])
       this.main.classList.add('list-content')
       this.addValueInputInSpan()
+      this.ondrag()
       this.contador++
       this.input.value = ''
     }
@@ -169,6 +171,17 @@ export default class ToDoList {
     })
   }
 
+  // Método para evento de Ondrag
+  ondrag() {
+    const li = document.querySelectorAll('li')
+
+    li.forEach((item) => {
+      item.addEventListener('dragstart', ({ target }) => {
+        console.log('Pegou: ', target)
+      })
+    })
+  }
+
   // Método para pegar LI completa
   getLiComplete() {
     this.createArrayImg()
@@ -184,5 +197,7 @@ export default class ToDoList {
     this.clickInRemoveLi()
     this.clickInSave()
     this.getLocalStorage()
+
+    return this
   }
 }
