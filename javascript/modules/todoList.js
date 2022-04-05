@@ -176,8 +176,9 @@ export default class ToDoList {
     const li = document.querySelectorAll('li')
 
     li.forEach((item) => {
-      item.addEventListener('dragstart', ({ target }) => {
-        console.log('Pegou: ', target)
+      item.addEventListener('dragend', ({ target }) => {
+        const ulDrop = document.querySelector('[data-js="drop"]')
+        ulDrop.appendChild(target)
       })
     })
   }

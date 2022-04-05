@@ -104,6 +104,10 @@ img {
   margin-bottom: 30px;
 }
 
+.list-ul {
+  padding: 20px;
+}
+
 .list-ul li {
   max-width: 920px;
   background: #dee5ff;
@@ -125,6 +129,24 @@ img {
   color: #01071d;
   overflow: hidden;
   box-sizing: border-box;
+}
+
+.drop-bg {
+  background: #000000;
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
+.drop li {
+  max-width: 920px;
+  background: #dee5ff;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .botoes {
