@@ -26,6 +26,7 @@ export default class ToDoList {
 
     for (let index = 0; this.arrayLi.length < 10; index++) {
       this.arrayLi.push(this.createElement('li'))
+      this.arrayLi[index].setAttribute('draggable', 'true')
     }
     this.addSpanInLi()
     this.addImgInLi()
@@ -184,5 +185,7 @@ export default class ToDoList {
     this.clickInRemoveLi()
     this.clickInSave()
     this.getLocalStorage()
+
+    return this
   }
 }
