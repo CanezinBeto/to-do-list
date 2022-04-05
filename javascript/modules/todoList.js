@@ -88,6 +88,7 @@ export default class ToDoList {
       this.ul.appendChild(this.arrayLi[this.contador])
       this.main.classList.add('list-content')
       this.addValueInputInSpan()
+      this.ondrag()
       this.contador++
       this.input.value = ''
     }
@@ -166,6 +167,17 @@ export default class ToDoList {
         if (this.contador < 1) {
           this.main.classList.remove('list-content')
         }
+      })
+    })
+  }
+
+  // Método para evento de Ondrag
+  ondrag() {
+    const li = document.querySelectorAll('li')
+
+    li.forEach((item) => {
+      item.addEventListener('dragstart', ({ target }) => {
+        console.log('Pegou: ', target)
       })
     })
   }
