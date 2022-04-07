@@ -1,66 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To-do List</title>
 
-    <link rel="stylesheet" href="./style/style.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-do List</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=MuseoModerno:wght@500&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+  <link rel="stylesheet" href="./style/style.css" />
 
-  <body>
-    <header class="header-bg">
-      <div class="header-title">
-        <h1>To-do List<span>.</span></h1>
-      </div>
-    </header>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=MuseoModerno:wght@500&display=swap" rel="stylesheet" />
+</head>
 
-    <div class="flex1">
-      <div class="list">
-        <form class="form" action="#">
-          <label for="text">Digite sua tarefa.</label>
-          <input data-js="input" type="text" name="text" id="text" />
-          <button data-js="add" class="btn">add</button>
-        </form>
-
-        <main data-js="main">
-          <ul data-js="ul" class="list-ul"></ul>
-        </main>
-
-        <div class="botoes">
-          <button data-js="salvar" class="salvar">Salvar Lista</button>
-          <button data-js="remover" class="remover">
-            Remover Tudo <img src="./img/delete_all.svg" alt="Deletar tudo" />
-          </button>
-        </div>
-      </div>
+<body>
+  <header class="header-bg">
+    <div class="header-title">
+      <h1>To-do List<span>.</span></h1>
     </div>
+  </header>
 
-    <footer class="footer">
-      <p>Desenvolvido por <span class="dev">Alberto Canezin.</span></p>
-      <div class="footer-links">
-        <a href="https://www.linkedin.com/in/albertocanezin-dev/">
-          <img src="./img/linkedin.svg" alt="Linkedin do Desenvolvedor" />
-        </a>
-        <a href="https://github.com/CanezinBeto">
-          <img src="./img/github.svg" alt="Github do Desenvolvedor" />
-        </a>
-        <a href="https://canezinbeto.github.io/">
-          <img src="./img/web.svg" alt="Web site do Desenvolvedor" />
-        </a>
+  <div class="flex1">
+    <div class="list">
+      <form class="form" action="#">
+        <label for="text">Digite sua tarefa.</label>
+        <input data-js="input" type="text" name="text" id="text" />
+        <button data-js="add" class="btn">add</button>
+      </form>
+
+      <main data-js="main">
+        <ul data-js="ul" class="list-ul"></ul>
+      </main>
+
+      <div class="botoes">
+        <button data-js="salvar" class="salvar">Salvar Lista</button>
+        <button data-js="remover" class="remover">
+          Remover Tudo <img src="./img/delete_all.svg" alt="Deletar tudo" />
+        </button>
       </div>
-    </footer>
 
-    <!-- Main Script -->
-    <script type="module" src="./javascript/script.js"></script>
-  </body>
+      <section data-js="sec-drop">
+        <ul data-js="drop"></ul>
+      </section>
+      <!-- <button data-js="removerDrop" class="remover">
+        Remover Tudo <img src="./img/delete_all.svg" alt="Deletar tudo" />
+      </button> -->
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>Desenvolvido por <span class="dev">Alberto Canezin.</span></p>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/albertocanezin-dev/">
+        <img src="./img/linkedin.svg" alt="Linkedin do Desenvolvedor" />
+      </a>
+      <a href="https://github.com/CanezinBeto">
+        <img src="./img/github.svg" alt="Github do Desenvolvedor" />
+      </a>
+      <a href="https://canezinbeto.github.io/">
+        <img src="./img/web.svg" alt="Web site do Desenvolvedor" />
+      </a>
+    </div>
+  </footer>
+
+  <!-- Main Script -->
+  <script type="module" src="./javascript/script.js"></script>
+</body>
+
 </html>

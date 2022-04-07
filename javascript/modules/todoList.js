@@ -88,7 +88,6 @@ export default class ToDoList {
       this.ul.appendChild(this.arrayLi[this.contador])
       this.main.classList.add('list-content')
       this.addValueInputInSpan()
-      this.ondrag()
       this.contador++
       this.input.value = ''
     }
@@ -98,14 +97,15 @@ export default class ToDoList {
   removeAllLiInUl() {
     const li = document.querySelectorAll('li')
 
-    li.forEach((item) => {
-      this.ul.removeChild(item)
-      this.contador = 0
+    if (this.ul.children.length > 0) {
+      li.forEach((item) => {
+        this.ul.removeChild(item)
+        this.contador = 0
 
-      if (this.contador < 1) {
-        this.main.classList.remove('list-content')
-      }
-    })
+        if (this.ul.children.length <= 0)
+          this.main.classList.remove('list-content')
+      })
+    }
   }
 
   // Método para chamar o evento de adicionar LI
@@ -125,9 +125,8 @@ export default class ToDoList {
         this.ul.removeChild(target.parentNode)
         this.contador--
 
-        if (this.contador < 1) {
+        if (this.ul.children.length <= 0)
           this.main.classList.remove('list-content')
-        }
       })
     })
   }
@@ -164,20 +163,8 @@ export default class ToDoList {
       item.addEventListener('click', () => {
         this.ul.removeChild(item.parentElement)
         this.contador--
-        if (this.contador < 1) {
+        if (this.ul.children.length <= 0)
           this.main.classList.remove('list-content')
-        }
-      })
-    })
-  }
-
-  // Método para evento de Ondrag
-  ondrag() {
-    const li = document.querySelectorAll('li')
-
-    li.forEach((item) => {
-      item.addEventListener('dragstart', ({ target }) => {
-        console.log('Pegou: ', target)
       })
     })
   }
