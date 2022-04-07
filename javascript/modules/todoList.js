@@ -88,7 +88,8 @@ export default class ToDoList {
       this.ul.appendChild(this.arrayLi[this.contador])
       this.main.classList.add('list-content')
       this.addValueInputInSpan()
-      this.ondrag()
+      this.dragInit()
+      this.dragEnd()
       this.contador++
       this.input.value = ''
     }
@@ -98,14 +99,15 @@ export default class ToDoList {
   removeAllLiInUl() {
     const li = document.querySelectorAll('li')
 
-    li.forEach((item) => {
-      this.ul.removeChild(item)
-      this.contador = 0
+    if (this.ul.children.length > 0) {
+      li.forEach((item) => {
+        this.ul.removeChild(item)
+        this.contador = 0
 
-      if (this.contador < 1) {
-        this.main.classList.remove('list-content')
-      }
-    })
+        if (this.ul.children.length <= 0)
+          this.main.classList.remove('list-content')
+      })
+    }
   }
 
   // Método para chamar o evento de adicionar LI
@@ -125,9 +127,8 @@ export default class ToDoList {
         this.ul.removeChild(target.parentNode)
         this.contador--
 
-        if (this.contador < 1) {
+        if (this.ul.children.length <= 0)
           this.main.classList.remove('list-content')
-        }
       })
     })
   }
@@ -164,22 +165,60 @@ export default class ToDoList {
       item.addEventListener('click', () => {
         this.ul.removeChild(item.parentElement)
         this.contador--
-        if (this.contador < 1) {
+        if (this.ul.children.length <= 0)
           this.main.classList.remove('list-content')
+      })
+    })
+  }
+
+  // Método para evento dragIniti
+  dragInit() {
+    const section = document.querySelector('[data-js="sec-drop"]')
+    const ul = document.querySelector('[data-js="drop"]')
+    const li = document.querySelectorAll('li')
+    const media = matchMedia('(min-width: 650px)').matches
+
+    li.forEach((item) => {
+      item.addEventListener('dragstart', () => {
+        if (media) {
+          section.classList.add('drop-bg')
+          ul.classList.add('drop')
         }
       })
     })
   }
 
-  // Método para evento de Ondrag
-  ondrag() {
+  // Método para evento de dragEnd
+  dragEnd() {
     const li = document.querySelectorAll('li')
 
     li.forEach((item) => {
       item.addEventListener('dragend', ({ target }) => {
         const ulDrop = document.querySelector('[data-js="drop"]')
-        ulDrop.appendChild(target)
+        const media = matchMedia('(min-width: 650px)').matches
+
+        if (media) ulDrop.appendChild(target)
+        if (this.ul.children.length <= 0)
+          this.main.classList.remove('list-content')
       })
+    })
+    this.removeAllLiInUlDrop()
+  }
+
+  // Método para remover todas LI
+  removeAllLiInUlDrop() {
+    const li = document.querySelectorAll('li')
+    const ulDrop = document.querySelector('[data-js="drop"]')
+    const btnRemoveDrop = document.querySelector('[data-js="removerDrop"]')
+
+    btnRemoveDrop.addEventListener('click', (event) => {
+      event.preventDefault()
+      if (ulDrop.children.length > 0) {
+        li.forEach((item) => {
+          ulDrop.removeChild(item)
+          this.contador = 0
+        })
+      }
     })
   }
 
