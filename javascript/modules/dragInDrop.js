@@ -1,57 +1,50 @@
 export default class DragInDrop {
-  constructor() {}
+  constructor(ul, btnAdd) {
+    this.ul = document.querySelector(ul)
+    this.btnAdd = document.querySelector(btnAdd)
+    this.liSave = this.ul.children
 
-  // Método para evento dragIniti
-  dragInit() {
-    const section = document.querySelector('[data-js="sec-drop"]')
-    const ul = document.querySelector('[data-js="drop"]')
-    const li = document.querySelectorAll('li')
-    const media = matchMedia('(min-width: 650px)').matches
+    // Bind das funções chamadas em eventos
+    this.dragOver = this.dragOver.bind(this)
+  }
 
-    li.forEach((item) => {
-      item.addEventListener('dragstart', () => {
-        if (media) {
-          section.classList.add('drop-bg')
-          ul.classList.add('drop')
-        }
+  // Método para dragover Save
+  dragOverSave() {
+    const arrayLi = [...this.liSave]
+    let target
+    arrayLi.forEach((item) => {
+      item.addEventListener('dragover', (event) => {
+        event.preventDefault()
+        target = event.target
       })
     })
+    return target
   }
 
   // Método para evento de dragEnd
-  dragEnd() {
-    const li = document.querySelectorAll('li')
-
-    li.forEach((item) => {
+  dragEndSave() {
+    const arrayLi = [...this.liSave]
+    arrayLi.forEach((item) => {
       item.addEventListener('dragend', ({ target }) => {
-        const ulDrop = document.querySelector('[data-js="drop"]')
-        const media = matchMedia('(min-width: 650px)').matches
-
-        if (media) {
-          ulDrop.appendChild(target)
-          this.contador--
-        }
-        if (this.ul.children.length <= 0)
-          this.main.classList.remove('list-content')
+        this.ul.insertBefore(target, this.dragOverSave())
       })
     })
-    this.removeAllLiInUlDrop()
   }
 
-  // Método para remover todas LI
-  removeAllLiInUlDrop() {
+  // Método para dragOver
+  dragOver() {
     const li = document.querySelectorAll('li')
-    const ulDrop = document.querySelector('[data-js="drop"]')
-    const btnRemoveDrop = document.querySelector('[data-js="removerDrop"]')
+    console.log(li)
+  }
 
-    btnRemoveDrop.addEventListener('click', (event) => {
-      event.preventDefault()
-      if (ulDrop.children.length > 0) {
-        li.forEach((item) => {
-          ulDrop.removeChild(item)
-          this.contador = 0
-        })
-      }
-    })
+  // Evento de adicionar Li para atualizar os li
+  attLi() {
+    this.btnAdd.addEventListener('click', this.dragOver)
+  }
+
+  // Método para iniciar drag in drop
+  init() {
+    this.dragEndSave()
+    this.attLi()
   }
 }
