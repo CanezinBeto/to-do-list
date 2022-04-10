@@ -139,7 +139,6 @@ export default class ToDoList {
   // Método para salvar a ul no localStorage
   saveUlContent() {
     const ulContent = this.ul.innerHTML
-
     localStorage['ul'] = ulContent
   }
 
