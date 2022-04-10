@@ -5,7 +5,6 @@ export default class DragInDrop {
     this.liSave = this.ul.children
 
     // Bind das funções chamadas em eventos
-    this.dragOver = this.dragOver.bind(this)
     this.dragEnd = this.dragEnd.bind(this)
   }
 

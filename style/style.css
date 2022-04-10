@@ -53,15 +53,16 @@ img {
 .list {
   max-width: 1000px;
   margin: 0 auto;
-  position: relative;
 }
 
 .form {
+  display: grid;
+  grid-template-columns: 1fr auto;
   margin-bottom: 30px;
 }
 
 .form label {
-  display: block;
+  grid-column: 1 / -1;
   font-family: 'Fira Sans';
   font-size: 22px;
   font-weight: 400;
@@ -70,8 +71,8 @@ img {
 }
 
 .form input {
-  display: inline-block;
-  border: 1px solid #becbfa;
+  grid-column: 1;
+  border: 1px solid #9baceb;
   background: #dee5ff;
   padding: 10px 20px;
   border-radius: 4px;
@@ -81,20 +82,16 @@ img {
   color: #01071d;
 }
 
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-family: 'Fira Sans';
-  text-transform: uppercase;
-  color: #01071d;
-  border-radius: 4px;
-  border: 1px solid #becbfa;
-  background: #dee5ff;
+.btnAdd {
   cursor: pointer;
-  margin-right: 0;
-  position: absolute;
-  right: 0;
+  display: inline-block;
+  background: none;
+  border: none;
+  padding: 10px;
+}
+
+.btnAdd img {
+  width: 30px;
 }
 
 .list-content {
@@ -127,36 +124,13 @@ img {
   box-sizing: border-box;
 }
 
-.drop-bg {
-  background: #000000;
-  padding: 20px;
-  border-radius: 4px;
-  margin-bottom: 30px;
-}
-
-.drop li {
-  max-width: 920px;
-  background: #dee5ff;
-  margin-bottom: 20px;
-  border-radius: 4px;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.drop li:last-child {
-  margin-bottom: 0px;
-}
-
 .botoes {
   display: flex;
-  margin-bottom: 30px;
   gap: 40px;
 }
 
 .salvar {
-  background: #becbfa;
+  background: #dee5ff;
   border: 1px solid #9baceb;
   border-radius: 4px;
   font-size: 16px;
@@ -164,21 +138,28 @@ img {
   color: #01071d;
   font-family: 'Fira Sans';
   cursor: pointer;
+  text-transform: uppercase;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-weight: 600;
 }
 
 .remover {
   background: #dee5ff;
-  border: 1px solid #becbfa;
+  border: 1px solid #9baceb;
   border-radius: 4px;
   font-size: 16px;
   padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  gap: 10px;
+  gap: 0px 10px;
   cursor: pointer;
   color: #01071d;
   font-family: 'Fira Sans';
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 .footer {
@@ -235,12 +216,21 @@ img {
   .botoes {
     flex-direction: column;
     gap: 15px;
-    max-width: 60%;
     margin: 0 auto 30px auto;
   }
 
   .footer {
     flex-direction: column;
     gap: 10px;
+  }
+
+  .salvar {
+    width: 100px;
+    margin: 0 auto;
+  }
+
+  .remover {
+    width: 180px;
+    margin: 0 auto;
   }
 }
