@@ -194,6 +194,21 @@ img {
   width: 30px;
 }
 
+.fetch-bitcoin {
+  display: flex;
+  align-items: center;
+  color: #dee5ff;
+  font-family: 'Fira Sans';
+}
+
+.fetch-bitcoin img {
+  cursor: default;
+}
+
+.arrow {
+  margin: 0px 20px;
+}
+
 @media (max-width: 500px) {
   .form {
     display: flex;
