@@ -1,5 +1,8 @@
 import ToDoList from './modules/todoList.js'
 import DragInDrop from './modules/dragInDrop.js'
+import fetchBitcoin from './modules/fetchBitcoin.js'
+
+fetchBitcoin('https://blockchain.info/ticker', '[data-js="dolar"]')
 
 const toDoList = new ToDoList(
   '[data-js="input"]',
