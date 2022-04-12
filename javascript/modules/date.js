@@ -53,7 +53,7 @@ export default class DateActual {
   setDateInHTML() {
     const { year, mounth, day } = this.totalDate()
 
-    if (mounth < 10)
+    if (mounth < 9)
       this.date.innerText = `${'0' + (mounth + 1)} / ${day} / ${year}`
     else this.date.innerText = `${mounth + 1} / ${day} / ${year}`
   }
@@ -62,8 +62,42 @@ export default class DateActual {
     let { hours, minutes, seconds } = this.totalDate()
 
     setInterval(() => {
-      seconds += 1
+      seconds++
+
+      if (seconds > 59) {
+        seconds = 0
+        minutes++
+      }
+
+      if (minutes > 59) {
+        minutes = 0
+        hours++
+      }
+
+      if (hours > 23) {
+        hours = 0
+      }
+
+      this.formatHours(hours, minutes, seconds)
     }, 1000)
+  }
+
+  formatHours(hours, minutes, seconds) {
+    if (hours < 10) {
+      hours = `0${hours}`
+    } else {
+      hours = hours
+    }
+    if (minutes < 10) {
+      minutes = `0${minutes}`
+    } else {
+      minutes = minutes
+    }
+    if (seconds < 10) {
+      seconds = `0${seconds}`
+    } else {
+      seconds = seconds
+    }
     this.hours.innerText = `${hours} : ${minutes} : ${seconds}`
   }
 

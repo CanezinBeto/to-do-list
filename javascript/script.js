@@ -3,13 +3,13 @@ import DragInDrop from './modules/dragInDrop.js'
 import fetchBitcoin from './modules/fetchBitcoin.js'
 import DateActual from './modules/date.js'
 
-fetchBitcoin('https://blockchain.info/ticker', '[data-js="dolar"]')
+fetchBitcoin('https://blockchain.info/ticker', '[data-js="dollar"]')
 
 const toDoList = new ToDoList(
   '[data-js="input"]',
   '[data-js="add"]',
-  '[data-js="remover"]',
-  '[data-js="salvar"]',
+  '[data-js="remove"]',
+  '[data-js="save"]',
   '[data-js="ul"]',
   '[data-js="main"]'
 )
