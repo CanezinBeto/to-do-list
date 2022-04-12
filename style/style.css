@@ -35,6 +35,7 @@ img {
 .header-bg {
   background: #292929;
   margin-bottom: 30px;
+  position: relative;
 }
 
 .header-title h1 {
@@ -48,6 +49,14 @@ img {
 
 .header-title h1 span {
   color: #596eb8;
+}
+
+.date {
+  position: absolute;
+  top: 25px;
+  right: 40px;
+  color: #dee5ff;
+  font-family: 'MuseoModerno';
 }
 
 .list {
@@ -124,29 +133,13 @@ img {
   box-sizing: border-box;
 }
 
-.botoes {
+.buttons {
   display: flex;
   gap: 40px;
   margin-bottom: 30px;
 }
 
-.salvar {
-  background: #dee5ff;
-  border: 1px solid #9baceb;
-  border-radius: 4px;
-  font-size: 16px;
-  padding: 10px 20px;
-  color: #01071d;
-  font-family: 'Fira Sans';
-  cursor: pointer;
-  text-transform: uppercase;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  font-weight: 600;
-}
-
-.remover {
+.button {
   background: #dee5ff;
   border: 1px solid #9baceb;
   border-radius: 4px;
@@ -193,7 +186,7 @@ img {
 }
 
 .footer-links a img {
-  width: 30px;
+  width: 26px;
 }
 
 .fetch-bitcoin {
@@ -212,6 +205,20 @@ img {
 }
 
 @media (max-width: 750px) {
+  .header-bg {
+    padding: 10px;
+  }
+
+  .header-title h1 {
+    font-size: 40px;
+    padding: 5px;
+  }
+
+  .date {
+    position: initial;
+    text-align: center;
+  }
+
   .form {
     display: flex;
     flex-direction: column;
@@ -224,29 +231,20 @@ img {
     align-self: center;
   }
 
-  .btn {
-    position: initial;
-    width: 80px;
-    margin: 15px auto;
+  .list-content {
+    border-radius: 0px;
   }
 
-  .botoes {
+  .buttons {
     flex-direction: column;
     gap: 15px;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .footer {
     flex-direction: column;
     gap: 10px;
-  }
-
-  .salvar {
-    width: 100px;
-    margin: 0 auto;
-  }
-
-  .remover {
-    width: 180px;
-    margin: 0 auto;
   }
 }

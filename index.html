@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
@@ -20,6 +20,10 @@
     <div class="header-title">
       <h1>To-do List<span>.</span></h1>
     </div>
+    <div class="date">
+      <p data-js="date"></p>
+      <p data-js="hours"></p>
+    </div>
   </header>
 
   <div class="flex1">
@@ -29,7 +33,7 @@
           Type your task</label>
         <input data-js="input" type="text" name="text" id="text" />
         <button data-js="add" class="btnAdd">
-          <img src="./img/button.svg" alt="Botão Adicionar">
+          <img src="./img/button.svg" alt="Add button">
         </button>
       </form>
 
@@ -37,13 +41,14 @@
         <ul data-js="ul" class="list-ul"></ul>
       </main>
 
-      <div class="botoes">
-        <button data-js="salvar" class="salvar">
+      <div class="
+      buttons">
+        <button data-js="save" class="button">
           Save
           <img src="./img/save.svg" alt="Icon Save">
         </button>
-        <button data-js="remover" class="remover">
-          Remove All <img src="./img/delete_all.svg" alt="Deletar tudo" />
+        <button data-js="remove" class="button">
+          Remove All <img src="./img/delete_all.svg" alt="Delete all" />
         </button>
       </div>
     </div>
@@ -53,21 +58,21 @@
     <p>Developed by <span class="dev">Alberto Canezin.</span></p>
     <div class="footer-links">
       <a href="https://www.linkedin.com/in/albertocanezin-dev/">
-        <img src="./img/linkedin.svg" alt="Linkedin do Desenvolvedor" />
+        <img src="./img/linkedin.svg" alt="Developer Linkedin" />
       </a>
       <a href="https://github.com/CanezinBeto">
-        <img src="./img/github.svg" alt="Github do Desenvolvedor" />
+        <img src="./img/github.svg" alt="Developer's Github" />
       </a>
       <a href="https://canezinbeto.github.io/">
-        <img src="./img/web.svg" alt="Web site do Desenvolvedor" />
+        <img src="./img/web.svg" alt="Developer website" />
       </a>
     </div>
     <div class="fetch-bitcoin">
-      <span>1</span>
+      <span>1.00</span>
       <img src="./img/bitcoin.svg" alt="Icon Bitcoin">
       <img class="arrow" src="./img/arrow.svg" alt="Arrow">
-      <span data-js="dolar"></span>
-      <img src="./img/dollar.svg" alt="Icon Dolar">
+      <span data-js="dollar"></span>
+      <img src="./img/dollar.svg" alt="Icon Dollar">
     </div>
   </footer>
 
