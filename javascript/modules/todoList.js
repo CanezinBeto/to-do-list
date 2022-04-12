@@ -41,6 +41,7 @@ export default class ToDoList {
       this.arrayImg.push(this.createElement('img'))
       this.arrayImg[index].setAttribute('src', './img/delete.svg')
       this.arrayImg[index].setAttribute('data-js', 'delete')
+      this.arrayImg[index].setAttribute('draggable', 'false')
     }
     return this.arrayImg
   }
