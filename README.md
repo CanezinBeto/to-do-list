@@ -1,6 +1,6 @@
 # Todo-List
 
-<p style="font-size: 16px;">Todo-list é um projéto pessoal desenvolvido para pratiar JavaScript, foi desenvolvido sem usar nenhum plugin, ou ferramenta externa, tudo foi desenvolvido do zero. <br>
+<p style="font-size: 16px;">Todo-list é um projéto pessoal desenvolvido para praticar JavaScript, foi desenvolvido sem usar nenhum plugin, ou ferramenta externa, tudo foi desenvolvido do zero. <br>
 Este projeto usou como metodologia POO, orientação a objeto.</p>
 
 - Foi desenvolvido com boas práticas em JavaScript
